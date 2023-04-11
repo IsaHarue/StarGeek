@@ -4,8 +4,12 @@
     font-family: 'Akshar', sans-serif;
 }
 
+body{
+    background-color: #000000;
+    width: 100vw;
+}
 
-.container{
+ body > .container{
     display: flex;
     background-color: black;
     display: grid;
@@ -37,19 +41,18 @@ footer{
 
 main{
     grid-area: m;
-    animation: fundo 10s linear infinite;
+    animation: fundo 10s linear infinite ;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @keyframes fundo{
-
     0%{background-image: url(img/filmes/grupo1.png);}
     50%{background-image: url(img/filmes/grupo2.png);}
     100%{background-image: url(img/filmes/grupo3.png);}
-
 }
+
 
 main > .quadro{
     width: 1205px;
@@ -80,8 +83,8 @@ main > .quadro{
     font-weight: 600;
     font-size: 48px;
     line-height: 53px;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: #FFFFFF;
-    text-shadow: 1px 1px black;
     width: 1025px;
     margin-bottom: 20px;
 }
@@ -96,7 +99,7 @@ input[type="submit"]{
     font-size: 60px;
     line-height: 55px;
     color: #FFFFFF;
-    text-shadow: 5px 5px #000000;
+    text-shadow: 3px 3px 1px black, -3px 3px 1px black, 3px -3px 1px black, -3px -3px 1px black;
 }
 
 #bt1{
@@ -128,4 +131,71 @@ input[type="submit"]{
     line-height: 53px;
     margin: 20px;
     position: static;
+}
+
+@media (max-width:360px){
+   body > .container{
+        grid-template-columns: 100vw;
+        grid-template-rows: 45px 550px 45px;
+        grid-template-areas: 
+        "h"
+        "m"
+        "f";
+
+   }
+
+   .logo > img{
+    width: 100px;
+   }
+
+   main > .quadro{
+    width: 295px;
+    height: 403px;
+    margin-bottom: 90px;
+   }
+
+   .frase{
+    width: 278px;
+    height: 156px;
+    margin-top: 24px;
+   }
+
+   .frase p{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    width: 260px;
+    margin: 20px;
+   }
+
+   input[type="submit"]{
+    height: 51px;
+    width: 143px;
+    border: 5px solid #000000;
+    font-weight: 600;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black, -1px 1px 1px black, 1px -1px 1px black, -1px -1px 1px black;
+    line-height: 15px;
+   }
+   
+   #bt1:hover{
+    width: 137px;
+    height: 44px;
+    background-color: #930303;
+    font-size: 50px;
+    }
+
+    #bt2:hover{
+    width: 137px;
+    height: 44px;
+    background-color: #025610;
+    font-size: 50px;
+    }
+
+    .ou p{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 22px;
+    }
+
 }
