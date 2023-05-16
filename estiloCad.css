@@ -140,11 +140,15 @@ input[type="submit"]:not(#btl){
     border-radius: 16px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 89px auto;
+    grid-template-rows: 89px auto auto;
     grid-template-areas: 
     "c"
+    "msg"
     "p";
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -153,6 +157,7 @@ input[type="submit"]:not(#btl){
     background-color: #41247D;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    width: 505px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -196,10 +201,15 @@ input[type="text"], input[type="email"], input[type="password"]{
     padding-left: 2rem;
     font-size: 20px;
     font-weight: 500;
+    
 }
 
-input[type="text"], input[type="email"], input[type="password"]:focus{
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus{
     outline: none;
+}
+
+input[type="text"], input[type="email"] {
+    background-color: #FFFFFF;
 }
 
 #btl{
@@ -221,6 +231,16 @@ input[type="text"], input[type="email"], input[type="password"]:focus{
     font-size: 30px;
     background-color: #960404;
 }
+
+.mensagem > p{
+    grid-area: msg;
+    max-width: 500px;
+    min-width: 320px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color:red;
+}
+
 
 @media (max-width:360px){
     body > .container{
