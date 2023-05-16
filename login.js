@@ -1,4 +1,5 @@
 const mensagem = document.querySelector(".mensagem");
+const erro = document.querySelector(".erro");
 const formulario = document.getElementById("formulario");
 const nome = document.getElementById("mynome");
 const senha = document.getElementById("mysenha");
@@ -37,7 +38,8 @@ formulario.onsubmit = (evento) =>{
                 }, 1000);
                 return true;
             } else {
-                mensagem.innerHTML = "<p> Usuário ou senha incorreto </p>"
+                
+                erro.innerHTML = "<p> Usuário ou senha incorreto </p>"
                 evento.preventDefault();
             }
         });

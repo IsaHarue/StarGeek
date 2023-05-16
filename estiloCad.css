@@ -140,15 +140,11 @@ input[type="submit"]:not(#btl){
     border-radius: 16px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 89px auto auto;
+    grid-template-rows: 89px auto;
     grid-template-areas: 
     "c"
-    "msg"
     "p";
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     
 }
 
@@ -157,7 +153,6 @@ input[type="submit"]:not(#btl){
     background-color: #41247D;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    width: 505px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -233,12 +228,14 @@ input[type="text"], input[type="email"] {
 }
 
 .mensagem > p{
-    grid-area: msg;
-    max-width: 500px;
+    max-width: 450px;
     min-width: 320px;
     font-size: 20px;
     margin-bottom: 20px;
     color:red;
+    position: absolute;
+    bottom: 450px;
+    left: 190px;
 }
 
 

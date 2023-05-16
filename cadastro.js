@@ -44,7 +44,6 @@ formulario.onsubmit = (evento) =>{
 
     localStorage.setItem("dados", JSON.stringify(dados));
     evento.preventDefault();
-    mensagem.innerHTML = "<p> Parabéns Cadastro feito com sucesso <p>";
 
     setTimeout(() =>{
         window.location.assign("login.html");
