@@ -1,0 +1,483 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Akshar', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #0B1237;
+}
+
+.container{
+    
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "h"
+    "m";
+}
+
+main > .quadros {
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "fil ser"
+    "liv jog";
+    gap: 50px 80px;
+    padding: 90px 200px;
+}
+
+
+img[alt="logo"]{
+    grid-area: l;
+    width: 261px;
+    height: 91px;
+    margin-top: 91px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+header{
+    grid-area: h;
+    background-color:#000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px
+}
+
+
+
+img[alt="menu"]{
+    width: 68px;
+    height: 72px;
+}
+
+header p{
+    color: #ffff;
+    font-weight: 600;
+    font-size: 96px;
+}
+
+#q{
+    width: 520px;
+    height: 380px;
+    border: 5px solid #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 68px auto;
+    grid-template-areas: 
+    "ca"
+    "me"
+}
+
+.quadro1{
+    grid-area: fil;
+    background-color: #295F9F;
+    
+ 
+}
+
+.quadro2{
+    grid-area: ser;
+    background-color: #470C75;
+    
+}
+
+.quadro3{
+    grid-area: liv;
+    background-color: #7D0A63;
+}
+
+.quadro4{
+    grid-area: jog;
+    background-color: #B30036;
+}
+
+.titulo{
+    grid-area: ca;
+    width: 511px;
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.titulo p{
+    font-weight: 400;
+    font-size: 48px;
+    color: #ffff;
+}
+
+.cont{
+    grid-area: me;
+    max-width: 510px;
+    max-height: 370px;
+    overflow-y: scroll;
+    overflow-x: wrap;
+    padding-left: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 300px;
+}
+
+html ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+#maisinho{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.mais{
+    grid-area: ma;
+
+}
+
+.edit{
+    width: 422px;
+    height: 587px;
+    background-color: #9A9A9A;
+    border: 10px solid #000000;
+    border-radius: 15px;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "ft"
+    "fra"
+    "txt";
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.edit > .immg > .check > svg{
+    position: absolute;
+    height: 70px;
+    color: #000000;
+    bottom: 30.5rem;
+    left: 19.5rem;
+}
+
+.add{
+    width: 520px;
+    height: 370px;
+    background-color: #295F9F;
+    border: 5px solid #000000;
+    position: absolute;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "txt"
+    "pin"
+    "addi";
+}
+
+.cima > input[type="text"]{
+    grid-area: txt;
+    width: 511px;
+    height: 68px;
+    font-weight: 700;
+    font-size: 48px;
+    border: none;
+    background-color: #262626;
+    color: #ffff;
+}
+
+.cima > input[type="text"]:focus{
+    outline: none;
+}
+
+.meio{
+    grid-area: pin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img[alt="pinc"], .baixo p{
+    cursor: pointer;
+    color: #000000;
+}
+
+.baixo p{
+    text-decoration: none;
+}
+
+.baixo{
+    font-weight: 400;
+    font-size: 48px;
+    display: flex;
+    justify-content: end;  
+    align-items: end;  
+    padding-right: 10px;
+}
+
+.immg{
+    grid-area: ft;
+    width: 337px;
+    height: 211px;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+input[type="text"]{
+    grid-area: fra;
+    font-weight: 700;
+    font-size: 48px;
+    color: #ffff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 400px;
+    text-align: center;
+}
+
+
+input[type="text"]:focus{
+    outline: none;
+}
+
+.catt > textarea{
+    grid-area: txt;
+    width: 337px;
+    height: 198px;
+    background-color: #D9D9D9;
+    border: none;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 10px;
+
+}
+
+.catt > textarea:focus{
+    outline: none;
+}
+
+p {
+    cursor: context-menu;
+}
+
+ul > li{
+    cursor:context-menu;
+}
+
+ul > a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.flecha > img{
+    cursor: pointer;
+}
+
+i{
+    width: 50px;
+    height: 20px;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+.cardfilme {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.card{
+    width: 250px;
+}
+
+.cardimagem img{
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    width: 250px;
+    height: 150px;
+}
+
+.cards img:hover{
+    opacity: 0.7;
+}
+
+.cardinfo {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.cardnome {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(145, 145, 145);
+    text-align: center;
+    margin-top: -5px;
+    padding: 20px;
+    width: 250px;
+    border-top: 5px #000000;
+}
+
+.cardnome p{
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.btn{
+  display:block;
+}
+
+.btneditar{
+  display: block;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+
+@media (max-width:360px){
+
+    main > .quadros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "fil"
+        "ser"
+        "liv"
+        "jog" ;
+        gap: 60px;
+    }
+
+    header{
+        padding: 0;
+        width: 100%;
+    }
+
+    img[alt="menu"]{
+        width: 33px;
+        height: 33px;
+    }
+
+
+    header p{
+        font-size: 40px;
+    }
+
+    img[alt="logo"]{
+        width: 121px;
+        height: 48px;
+        margin-top: 37px;
+    }
+
+    img[alt="mais"]{
+        size: 20px 20px;
+    }
+    
+    .mais{
+        size: 20px 20px;
+        left: 40%;
+        top: 1440px;
+    }
+
+    #q{
+        width: 320px;
+        height: 290px;
+        margin-right: 50px;
+    }
+
+   .titulo{
+        width: 311px;
+        height: 40px;
+    }
+
+   .titulo p{
+        font-size: 30px;
+    }
+
+    #maisinho{
+        width: 30px;
+    }
+
+    .cont{
+        max-width: 600px;
+        max-height: 10px;
+        padding-left: 55px;
+        padding-top: 212px;
+    }
+
+    .cardimagem img{
+        width: 200px;
+        height: 100px;
+    }
+
+    .cardinfo{
+        width: 200px;
+    }
+
+    .cardnome{
+        width: 200px;
+    }
+
+    .edit{
+        width: 312px;
+        height: 450px;
+        top: 100px;
+    }
+
+    .immg{
+        width: 237px;
+        height: 191px;
+    }
+
+    input[type="text"]{
+        width: 290px;
+        font-size: 32px;
+    }
+
+    .catt > textarea{
+        width: 237px;
+        height: 128px;
+        font-size: 20px;
+    }
+
+    .cam > input[type="file"]{
+        width: 200px;
+    }
+
+    .edit > .immg > .check > svg{
+        left: 14rem;
+        bottom: 23.5rem;
+        height: 50px;
+    }
+}

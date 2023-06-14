@@ -9,7 +9,7 @@ body{
     width: 100vw;
 }
 
-body > .container{
+ body > .container{
     display: flex;
     background-color: black;
     display: grid;
@@ -53,6 +53,7 @@ main{
     100%{background-image: url(img/filmes/grupo3.png);}
 }
 
+
 main > .quadro{
     width: 1205px;
     height: 718px;
@@ -88,7 +89,7 @@ main > .quadro{
     margin-bottom: 20px;
 }
 
-input[type="submit"]:not(#btl){
+input[type="submit"]{
     cursor: pointer;
     width: 390px;
     height: 111px;
@@ -132,20 +133,33 @@ input[type="submit"]:not(#btl){
     position: static;
 }
 
-.cadastro{
+#cadastro{
    
     width: 505px;
     height: 597px;
     background-color: #404040;
     border-radius: 16px;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     grid-template-rows: 89px auto;
     grid-template-areas: 
     "c"
     "p";
     position: absolute;
-    
+}
+
+#login{
+    width: 505px;
+    height: 597px;
+    background-color: #404040;
+    border-radius: 16px;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 89px auto;
+    grid-template-areas: 
+    "c"
+    "p";
+    position: absolute;
 }
 
 .titulo{
@@ -207,7 +221,7 @@ input[type="text"], input[type="email"] {
     background-color: #FFFFFF;
 }
 
-#btl{
+#btl, #btlo{
     width: 154px;
     height: 52px;
     background-color: #DA0000;
@@ -220,12 +234,14 @@ input[type="text"], input[type="email"] {
     color: #FFFFFF;
 }
 
-#btl:hover{
+#btl:hover, #btlo:hover{
     width: 140px;
     height: 47px;
     font-size: 30px;
     background-color: #960404;
+    
 }
+
 
 .mensagem > p{
     max-width: 450px;
@@ -236,103 +252,158 @@ input[type="text"], input[type="email"] {
     position: absolute;
     bottom: 450px;
     left: 190px;
+    
 }
 
+.mensageml > p{
+    max-width: 450px;
+    min-width: 320px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color:red;
+    position: absolute;
+    bottom: 450px;
+    left: 190px;
+}
+
+form p{
+    color: #FFFFFF;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+form p:hover{
+    font-weight: 620;
+    text-decoration-line: underline;
+}
 
 @media (max-width:360px){
-    body > .container{
-         grid-template-columns: 100vw;
-         grid-template-rows: 45px 550px 45px;
-         grid-template-areas: 
-         "h"
-         "m"
-         "f";
- 
-    }
- 
-    .logo > img{
-     width: 100px;
-    }
- 
-    main > .quadro{
-     width: 295px;
-     height: 403px;
-     margin-bottom: 90px;
-    }
- 
-    .frase{
-     width: 278px;
-     height: 156px;
-     margin-top: 24px;
-    }
- 
-    .frase p{
-     font-weight: 600;
-     font-size: 24px;
-     line-height: 26px;
-     width: 260px;
-     margin: 20px;
-    }
- 
-    input[type="submit"]:not(#btl){
-     height: 51px;
-     width: 143px;
-     border: 5px solid #000000;
-     font-weight: 600;
-     font-size: 24px;
-     text-shadow: 1px 1px 1px black, -1px 1px 1px black, 1px -1px 1px black, -1px -1px 1px black;
-     line-height: 15px;
-    }
-    
-    #bt1:hover{
-     width: 137px;
-     height: 44px;
-     background-color: #930303;
-     font-size: 50px;
-     }
- 
-     #bt2:hover{
-     width: 137px;
-     height: 44px;
-     background-color: #025610;
-     font-size: 50px;
-     }
- 
-     .ou p{
-     font-weight: 300;
-     font-size: 20px;
-     line-height: 22px;
-     }
- 
-    .cadastro{
-    width: 291px;
-    height: 373px;
-    grid-template-rows: 48px auto;
+   body > .container{
+        grid-template-columns: 100vw;
+        grid-template-rows: 45px 550px 45px;
+        grid-template-areas: 
+        "h"
+        "m"
+        "f";
+
+   }
+
+   .logo > img{
+    width: 100px;
+   }
+
+   main > .quadro{
+    width: 295px;
+    height: 403px;
+    margin-bottom: 90px;
+   }
+
+   .frase{
+    width: 278px;
+    height: 156px;
+    margin-top: 24px;
+   }
+
+   .frase p{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    width: 260px;
+    margin: 20px;
+   }
+
+   input[type="submit"]{
+    height: 51px;
+    width: 143px;
+    border: 5px solid #000000;
+    font-weight: 600;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black, -1px 1px 1px black, 1px -1px 1px black, -1px -1px 1px black;
+    line-height: 15px;
+   }
+   
+   #bt1:hover{
+    width: 110px;
+    height: 17px;
+    background-color: #930303;
+    font-size: 50px;
     }
 
-    .titulo p{
-        font-size: 24px;
+    #bt2:hover{
+    width: 110px;
+    height: 17px;
+    background-color: #025610;
+    font-size: 50px;
     }
 
-    label{
-        font-size: 20px;
-    }
-
-    .conteudo form{
-        gap: 0px;
-    }
-
-    input[type="text"], input[type="email"], input[type="password"]{
-        width: 223px;
-        height: 33px;
-        font-size: 15px;
-    }
-
-    #btl{
+    #btl, #btlo{
         width: 111px;
         height: 27px;
         font-size: 20px;
         line-height: 22px;
         margin-top: 20px;
+    }
+
+    .ou p{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 22px;
+    }
+
+    #cadastro{
+        width: 291px;
+        height: 373px;
+        grid-template-rows: 48px auto;
+    }
+
+    #login{
+        width: 291px;
+        height: 373px;
+        grid-template-rows: 48px auto;
+    }
+    
+    .titulo p{
+        font-size: 24px;
+    }
+    
+    label{
+        font-size: 20px;
+    }
+    
+    .conteudo form{
+        gap: 0px;
+    }
+    
+    input[type="text"], input[type="email"], input[type="password"]{
+        width: 223px;
+        height: 33px;
+        font-size: 15px;
+    }
+    
+   
+
+    .mensagem > p{
+        font-size: 15px;
+        bottom: 280px;
+        left: 100px;
+    }
+
+    form p{
+        font-size: 10px;
+    }
+
+    .mensagem > p{
+        max-width: 200px;
+        bottom: 280px;
+        left: 100px;
+        font-size: 12px;
+    }
+
+    .mensageml > p{
+        font-size: 12px;
+        bottom: 280px;
+        left: 90px;
     }
 }

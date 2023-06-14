@@ -5,11 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarGeek</title>
-    <link rel="stylesheet" href="estiloP.css">
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <STYLE>A {text-decoration: none;} </STYLE>
 
 <body>
+    <!--módulo-->
+    <div class="edit">
+        <div class="immg">
+        <div class="cam"><input type="file" name="foto" id="foto"></div>
+        <div class="check" onclick="fechar()"><svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" >
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></div>
+        </div>
+        <div class="ttit">
+            <input type="text"  class="texto" id="texto" placeholder="Título">
+        </div>
+        <div class="catt">
+            <textarea name="cattt" id="itxtt" ></textarea>
+        </div>
+        <input type="hidden" id="idalterar">
+    </div>
+    <!---->
     <div class="container">
         <img src="img/logo.png" alt="logo">
          <header>
@@ -17,125 +34,55 @@
             <a href="landpage.html"><img src="img/menu.png" alt="menu"></a>
         </header>
         <main>
-         
-            <div class="quadros">
-                <div class="quadro1">
-                    <div class="titulo"><p>Filmes</p></div>
-                    <div class="cards">
-                        <div class="card1">
-                            <div class="imag"></div>
-                            <div class="tit"><p>Título</p></div>
-                            <div class="cat"><p>Categorias</p></div>
-                            <div class="ee">
-                                <ul>
-                                    <li>excluir</li>
-                                    <a href="editcard.html"><li>editar</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card2">
-                            <div class="imag"></div>
-                            <div class="tit"><p>Título</p></div>
-                            <div class="cat"><p>Categorias</p></div>
-                            <div class="ee">
-                                <ul>
-                                    <li>excluir</li>
-                                    <a href="editcard.html"><li>editar</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                        <img src="img/flecha.png"  alt="flecha">
+         <div class="quadros">
+                <div id="q" class="quadro1">
+                    <div class="titulo">
+                        <p>Filmes</p>
+                        <svg onclick="abrir(1)" xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="maisinho" class="i bi-plus-square-fillb" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                          </svg>   
                     </div>
+                    <div  class="cont">
+                    <div id="cardfilme"></div>
+                    
+                    </div>
+               </div>
+            <div id="q" class="quadro2">
+                <div class="titulo">
+                    <p>Séries</p>
+                    <svg  onclick="abrir(2)" xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="maisinho" class="i bi-plus-square-fillb" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                      </svg>   
                 </div>
+                <div class="cont" >
+                    <div id="cardserie"></div>
+                    </div>
             </div>
-            <div class="quadro2">
-                <div class="titulo"><p>Séries</p></div>
-                <div class="cards">
-                    <div class="card1">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
+            <div id="q" class="quadro3">
+                <div class="titulo">
+                    <p>Livros</p>
+                    <svg onclick="abrir(3)" xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="maisinho" class="i bi-plus-square-fillb" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                      </svg>   </div>
+                <div class="cont" >
+                    <div id="cardlivro"></div>
                     </div>
-                    <div class="card2">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                    <img src="img/flecha.png"  alt="flecha">
+            </div>
+            <div id="q" class="quadro4">
+                <div class="titulo">
+                    <p>Jogos</p>
+                    <svg onclick="abrir(4)" xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="maisinho" class="i bi-plus-square-fillb" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                      </svg>   
                 </div>
-            </div>
-            <div class="quadro3">
-                <div class="titulo"><p>Livros</p></div>
-                <div class="cards">
-                    <div class="card1">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
+                <div class="cont" >
+                    <div id="cardjogo"></div>
                     </div>
-                    <div class="card2">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                    <img src="img/flecha.png"  alt="flecha">
-                </div>
-            </div>
-            <div class="quadro4">
-                <div class="titulo"><p>Jogos</p></div>
-                <div class="cards">
-                    <div class="card1">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card2">
-                        <div class="imag"></div>
-                        <div class="tit"><p>Título</p></div>
-                        <div class="cat"><p>Categorias</p></div>
-                        <div class="ee">
-                            <ul>
-                                <li>excluir</li>
-                                <a href="editcard.html"><li>editar</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mais"><a href="add.html"><img src="img/mais.png" alt=""></a></div>
-                   <img src="img/flecha.png"  alt="flecha">
-                </div>
-            </div>
+             </div>
         </div>
            
         </main>
     </div>
 </body>
+<script src="principal.js"></script>
 </html>
